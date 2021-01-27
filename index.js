@@ -17,9 +17,7 @@ const uri =` mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
     const tasks = client.db("volunteer-network").collection("tasks");
-        const registrations = client
-        .db("volunteer-network")
-        .collection("registrations");
+   const registrations = client.db("volunteer-network").collection("registrations");
     
       app.get("/tasks", (req, res) => {
         tasks.find({}).toArray((err, documents) => {
