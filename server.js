@@ -1,13 +1,13 @@
 
 const express = require('express');
-const bosyParser = require('body-parser');
 const cors = require("cors");
 const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
 const app = express()
-app.use=(bosyParser.json());
+app.use=(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
